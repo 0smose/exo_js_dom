@@ -39,11 +39,47 @@ function populateImages() {
 }
 populateImages();
 
-// function deleteLastCards() {
-// 	var card = document.querySelectorAll("div.row")[1];
+function deleteLastCards() {
+	for(i = 0; i <= 6; i++) {
+	var card = document.querySelectorAll("div.row")[1];
+	//let child = card.lastChild;
 
-// 	for(var i = 0; i = 3; i++){
-			
-// 	}
-// }
-// deleteLastCards();
+	card.removeChild(card.lastChild); 
+}};
+deleteLastCards();
+
+
+function changeCardsText() {
+	
+	let array = ["L’HyperText Markup Language, généralement abrégé HTML, est le langage de balisage conçu pour représenter les pages web", "Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML", "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs. C'est un langage orienté objet à prototype."];
+	var test = document.querySelectorAll('p.card-text');
+	array.forEach((value, index) =>{
+		test[index].textContent = value;
+});
+}
+
+changeCardsText();
+
+function changeViewButtons() {
+var lala= document.querySelectorAll('div.btn-group');
+
+
+for(i = 0;i<6;i++) {
+lala[i].children[0].classList.remove('btn-outline-secondary'); 
+lala[i].children[0].classList.add('btn-success'); 
+}}
+
+changeViewButtons();
+
+function blaBla() {
+	var tg = document.querySelectorAll('div.container')[3];
+	console.log(tg[3]);
+	var createe = document.createElement('div');
+	createe.className = "row";
+  tg.appendChild(createe);
+ console.log(tg);
+var card = tg.getElementsByClassName("row")[0].childNodes[5];
+tg.appendChild(card);
+}
+
+blaBla();
